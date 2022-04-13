@@ -4,7 +4,7 @@ export class AuthCredentialsDto {
   @IsString()
   @MinLength(4)
   @MaxLength(20)
-  username: string;
+  name: string;
 
   @IsString()
   @MinLength(8)
@@ -14,4 +14,15 @@ export class AuthCredentialsDto {
     message: 'password is too weak',
   })
   password: string;
+}
+
+export interface AuthRegisterDto {
+  email: string;
+  password: string;
+  name: string;
+}
+
+export interface AuthCredentialsDto {
+  password: string;
+  name: string;
 }

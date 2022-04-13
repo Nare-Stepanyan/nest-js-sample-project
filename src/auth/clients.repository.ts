@@ -9,9 +9,9 @@ import { AuthCredentialsDto } from './dto/auth-credentials.dto';
 @EntityRepository(Client)
 export class ClientsRepository extends Repository<Client> {
   async createClient(authCredentialsDto: AuthCredentialsDto): Promise<void> {
-    const { username, password } = authCredentialsDto;
+    const { name, password } = authCredentialsDto;
     const client = this.create({
-      username,
+      username: name,
       password,
     });
     try {
